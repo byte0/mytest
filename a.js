@@ -19,8 +19,16 @@ define(['jquery','template','util','uploadify','jcrop','form'],function($,templa
             $('#pictureInfo').html(html);
 
             var preview = $('.preview img'),jcrop_api;
-
-            // 上传图片
+            function foo(){
+                var arr = [];
+                for (var i = 0; i < arr.length; i++) {
+                    arr[i]
+                }
+                console.log(arr);
+                if(true){
+                    console.log(arr);
+                }
+            }
             // 处理文件上传
             $('#upfile').uploadify({
                 width : 80,
@@ -40,7 +48,6 @@ define(['jquery','template','util','uploadify','jcrop','form'],function($,templa
             });
             // 点击图片裁切按钮时进行裁切处理
             $('#cropPic').click(function(){
-
                 if($(this).attr('data-status') == 'save'){
                     // 保存图片的操作(提交裁切图片的尺寸信息)
                     $('#cropForm').ajaxSubmit({
@@ -73,6 +80,7 @@ define(['jquery','template','util','uploadify','jcrop','form'],function($,templa
                     // 缓存原来的裁切实例对象
                     jcrop_api = this;
                     // 计算选取的尺寸
+                    // 计算选取的尺寸
                     var width = jcrop_api.ui.stage.width,
                         height = jcrop_api.ui.stage.height,
                         x = 0;
@@ -85,7 +93,13 @@ define(['jquery','template','util','uploadify','jcrop','form'],function($,templa
                         height: height,
                         thumb : '.thumb'
                     });
+                    function abc(){
+                        console.log('123');
 
+                        if(7 > 2){
+                            console.log('nihao');
+                        }
+                    }
                     // 监听选区的变化
                     preview.parent().on('cropend',function(e,s,c){
                        $('#crop_x').val(c.x);
