@@ -19,7 +19,16 @@ define(['jquery','template','util','uploadify','jcrop','form'],function($,templa
             $('#pictureInfo').html(html);
 
             var preview = $('.preview img'),jcrop_api;
-
+            function foo(){
+                var sum = function(){
+                    console.log(123);
+                };
+                var arr = [];
+                for (var i = 0; i < arr.length; i++) {
+                    arr.push(i);
+                }
+                console.log(arr);
+            }
             // 上传图片
             // 处理文件上传
             $('#upfile').uploadify({
@@ -85,7 +94,14 @@ define(['jquery','template','util','uploadify','jcrop','form'],function($,templa
                         height: height,
                         thumb : '.thumb'
                     });
-
+                    // 添加代码
+                    function abc(data){
+                        var sum = 0;
+                        for (var i = 0; i < arr.length; i++) {
+                            sum += arr[i];
+                        }
+                        console.log(sum);
+                    }
                     // 监听选区的变化
                     preview.parent().on('cropend',function(e,s,c){
                        $('#crop_x').val(c.x);
